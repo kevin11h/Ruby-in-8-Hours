@@ -1,0 +1,276 @@
+def methodName # define a method
+  code
+  ...
+ end
+
+ def hello
+ 	puts "Hi, My Friends!"
+ end
+
+ def myMethod(p1, p2)
+ 	puts "This book is #{p1}"
+ 	puts "That book is #{p2}"
+ end
+
+ class ClassName
+ ...
+ end
+
+ class Vehicle
+ ...
+ end
+
+ class Vehicle # defines a class
+
+ 	Number wheel # attribute
+ 	Number power
+
+ 	Characters container
+
+ 	Function drive #define a function
+ 	{
+
+
+ 	}
+
+ 	Functions top # define a function
+ 	{
+
+ 	}
+
+ 	Function turn # define a function
+ 	{
+
+ 	}
+ end
+
+ ## Create Ruby Objects
+
+ objectName = ClassName.new
+
+ obj1 = MyClass.new(parameters)
+ obj2 = MyClass.new(parameters)
+
+ obj1 = MyClass.new("01", "Andy", "Boston")
+ obj2 = MyClass.new('02', 'Lisa', 'Huston')
+
+ class MyClass
+ 	@@students = 0
+
+ 	def initialize(id, name, address) #initialize method
+ 		@myID = id
+ 		@myName = name
+ 		@myAddr = address
+ 	end
+ end
+
+ puts "#@variable"
+ puts "#@@variable"
+
+ class MyClass # define a class
+
+ 	@@students = 0
+
+ 	def initialize(id, name, address) #initialize method
+ 		@myID = id
+ 		@myName = name
+ 		@myAddr = address
+ 	end
+
+ 	def information() #declare a method
+ 		puts "Student id #@myID"
+ 		puts "Student name #@myName"
+ 		puts "Student address #@myAddr"
+ 	end
+
+ 	def numbers() #declare a method
+
+ 		@@students += 1
+ 		puts "Total number of Students: #@@students"
+ 	end
+ end
+
+ # create two objects
+ obj1 = MyClass.new('01, 'Andy', 'Boston')
+ obj2 = MyClass.new('02', 'Lisa', 'Huston')
+
+ # call two methods
+ obj1.information()
+ obj2.information()
+ obj2.numbers()
+
+ 1.  Local Variable alphanumeric, underscore
+ 2.  Global variable start with $
+ 3.  Instance variable: start with @
+ 4.  Class Variable: start with @@
+
+ $global_variable = 200
+
+ class ClassA
+
+ 	def showGlobal
+ 		puts "the global variable in ClassA: #$global_variable"
+ 	end
+ end
+
+ class ClassB
+ 	def showGlobal
+ 		puts "The global variable in ClassB: "#$global_variable
+ 	end
+ end
+
+ classAobj = ClassA.new
+ classAobj.showGlobal
+ classBobj = ClassB.new
+ classBobj.showGlobal
+
+
+ # Define a class
+
+ class MyClass
+ 	def initialize(id, name, address)
+ 		@myID = id #instance variable
+ 		@myName = name #instance variable
+ 		@myAddr = address #instance variable
+ 	end
+
+ 	def information()
+ 		puts "Student id #@myID"
+ 		puts "Student name #@myName"
+ 		puts "Student address #@myAddr"
+ 	end
+ end
+
+
+ # create an object
+ obj1 = MyClass.new('01', 'Andy', 'Boston')
+
+obj1.information()
+obj2.information()
+
+class MyClass
+	@@students = 0
+
+	def numbers()
+		@@students += 10 # class variable
+
+		puts "Total number of students: #@@students"
+
+		end
+	end
+
+	# create two objects
+	obj1 = MyClass.new
+	obj2 = MyClass.new
+
+	# call two methods
+	obj1.numbers()
+	obj2.numbers()
+
+
+# Local Variable
+
+myVariable = 100 # local variable
+myVariable
+
+# Block
+
+blockName {
+
+	statement1
+	statement2	
+	...
+}
+
+test { #define block
+
+	puts "I am a block."
+}
+
+# Yield statement
+
+yield ( parameter)
+
+yield -> block
+
+## Ex 4.12
+
+def test #define a method
+	puts "You're inside a method"
+
+	yield # call block
+
+	puts "You're back in the method"
+
+	yield # call block
+
+end
+
+test { #define a block
+	puts "I'm a block"
+}
+
+
+## Ex 4.13
+
+def exam
+	yield 100
+end
+
+exam { |n| puts "You score is : #{ n }" }
+
+
+# BEGIN Block
+
+BEGIN { ... }
+
+# END Block
+
+END { puts " Current file has been loaded "}
+#Module
+### collection of class, methods, constants
+
+module ModuleName
+	s1
+	s2
+	...
+end
+
+module OneBook
+	puts "Java in8 hours"
+end
+
+>> saved as OneBook.rb
+
+require OneBook
+
+
+$LOAD_PATH << '.'
+require filename
+
+# Include
+include <moduleName>
+
+include OneBook
+
+## Ex 4.17
+module Apple
+	def apple
+		puts "this is  an apple"
+	end
+end
+
+class Fruit
+
+include Apple # import module
+	def banana
+			puts "this is an banana"
+	end
+end
+
+myObject = Fruit.new
+myObject.apple
+myObject.banana
+
+### "require" imports a module file, "include" imports a module code
+
